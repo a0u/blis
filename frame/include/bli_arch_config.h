@@ -117,6 +117,12 @@ CNTX_INIT_PROTS( power7 )
 CNTX_INIT_PROTS( bgq )
 #endif
 
+// -- RISC-V --
+
+#ifdef BLIS_CONFIG_HWACHA
+CNTX_INIT_PROTS( hwacha )
+#endif
+
 // -- Generic --
 
 #ifdef BLIS_CONFIG_GENERIC
@@ -217,6 +223,12 @@ CNTX_INIT_PROTS( generic )
 #include "bli_family_bgq.h"
 #endif
 
+// -- RISC-V --
+
+#ifdef BLIS_FAMILY_HWACHA
+#include "bli_family_hwacha.h"
+#endif
+
 // -- Generic --
 
 #ifdef BLIS_FAMILY_GENERIC
@@ -299,6 +311,10 @@ CNTX_INIT_PROTS( generic )
 #include "bli_kernels_bgq.h"
 #endif
 
+// -- RISC-V --
+#ifdef BLIS_KERNELS_HWACHA
+#include "bli_kernels_hwacha.h"
+#endif
 
 
 #endif

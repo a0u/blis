@@ -1017,6 +1017,9 @@ typedef enum
 	BLIS_ARCH_POWER7,
 	BLIS_ARCH_BGQ,
 
+	// RISC-V
+	BLIS_ARCH_HWACHA,
+
 	// Generic architecture/configuration
 	BLIS_ARCH_GENERIC,
 
