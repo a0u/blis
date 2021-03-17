@@ -645,7 +645,12 @@ ifeq ($(IS_WIN),yes)
 # independent.
 CPICFLAGS :=
 else
+ifeq ($(MK_ENABLE_SHARED),no)
+# Note: Disable PIC if building static libraries only.
+CPICFLAGS :=
+else
 CPICFLAGS := -fPIC
+endif
 endif
 $(foreach c, $(CONFIG_LIST_FAM), $(eval $(call append-var-for,CPICFLAGS,$(c))))
 

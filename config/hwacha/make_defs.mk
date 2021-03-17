@@ -74,6 +74,11 @@ ifeq ($(CC_VENDOR),gcc)
 CRVECFLAGS     := $(CKVECFLAGS)
 endif
 
+# Use medany code model for baremetal targets.
+ifeq ($(ENABLE_SYSTEM),no)
+CPICFLAGS      := -mcmodel=medany
+endif
+
 # Store all of the variables here to new variables containing the
 # configuration name.
 $(eval $(call store-make-defs,$(THIS_CONFIG)))

@@ -90,6 +90,8 @@
   #define BLIS_OS_BSD 1
 #elif defined(EMSCRIPTEN)
   #define BLIS_OS_EMSCRIPTEN
+#elif defined(__ELF__)
+// Assume baremetal ELF toolchain.
 #else
   #error "Cannot determine operating system"
 #endif
